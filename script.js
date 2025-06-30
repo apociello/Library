@@ -20,3 +20,7 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
 addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
 console.log(myLibrary)
+
+myLibrary.forEach((book) => {
+    console.log(book.title)
+})
