@@ -52,3 +52,11 @@ function displayBooks() {
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
 addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
 displayBooks()
+
+const dialog = document.getElementById('myDialog');
+
+const closeDialog = document.getElementById('close');
+closeDialog.addEventListener('click', () => dialog.close())
+
+const openDial = document.getElementById('openDialog')
+openDial.addEventListener('click', () => dialog.showModal())

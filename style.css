@@ -18,10 +18,12 @@ body {
 .container {
   height: 600px;
   width: 1000px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   flex-direction: column;
+  border-radius: 30px;
+  justify-content: space-between;
 }
 
 table {
@@ -40,12 +42,18 @@ th {
 }
 
 td {
-    background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ddd;
+  text-align: center;
 }
 
 caption {
   color: white;
   padding: 1rem;
   font-size: 3rem;
+}
+
+button {
+  padding: 8px;
+  margin-bottom: 3rem;
 }
