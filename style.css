@@ -18,5 +18,33 @@ body {
 .container {
   height: 600px;
   width: 800px;
-  background-color: rgba(255, 255, 255, 0.5)
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 1px;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.15);
+  color: #ddd;
+}
+
+caption {
+  color: white;
+  padding: 10px;
 }
