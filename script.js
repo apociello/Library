@@ -17,10 +17,38 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook)
 }
 
+function displayBooks() {
+    const tabla = document.getElementById('cuerpo')
+
+    myLibrary.forEach((book) => {
+        console.log(book.author);
+        const row = document.createElement("tr");
+
+        const titulo = document.createElement("td");
+        titulo.textContent = book.title;
+        row.appendChild(titulo);
+
+        const autor = document.createElement("td");
+        autor.textContent = book.author;
+        row.appendChild(autor);
+
+        const hojas = document.createElement("td");
+        hojas.textContent = book.pages;
+        row.appendChild(hojas);
+
+        const numero = document.createElement("td");
+        numero.textContent = book.id;
+        row.appendChild(numero);
+
+        const leido = document.createElement("td");
+        leido.textContent = book.read;
+        row.appendChild(leido);
+
+        tabla.appendChild(row)
+    })
+}
+
+
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
 addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
-console.log(myLibrary)
-
-myLibrary.forEach((book) => {
-    console.log(book.title)
-})
+displayBooks()
