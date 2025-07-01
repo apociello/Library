@@ -30,6 +30,7 @@ table {
   border-collapse: collapse;
   border: 1px solid rgba(255, 255, 255, 0.15);
   letter-spacing: 1px;
+  max-width: 90%;
 }
 
 td, th {
@@ -97,4 +98,16 @@ input {
 
 button {
   padding: 8px;
+}
+
+tr {
+  position: relative;
+}
+
+tr::after {
+  position: absolute;
+  content: 'wtf';
+  color: white;
+  top: 12px;
+  right: -40px;
 }

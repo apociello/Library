@@ -78,6 +78,7 @@ function addNewBook() {
 
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
 addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
+addBookToLibrary('It', 'Stephen King', '1138', 'NO')
 displayBooks()
 
 const dialog = document.getElementById('myDialog');
@@ -91,7 +92,6 @@ openDial.addEventListener('click', () => dialog.showModal());
 const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-     // aquí puedes recoger los datos
     const data = new FormData(form);
     const obj = Object.fromEntries(data.entries());
     addBookToLibrary(obj.title, obj.author, obj.pages, obj.read);
