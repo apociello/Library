@@ -27,10 +27,62 @@
         </table>
 
         <dialog id="myDialog">
-            <p>Hi I'm a dialog</p>
-            <button id="close">Close</button>
+
+            <div class="form-container">
+                
+                <form action="" method="post" autocomplete="off">
+
+                    <div class="form">
+                        <div class="question">
+                            <label for="title">TITLE</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                    
+                        <div class="question">
+                            <label for="author">AUTHOR</label>
+                            <input type="text" id="author" name="author" required>
+                        </div>
+                        
+                        <div class="question">
+                            <label for="pages">PAGES</label>
+                            <input type="tel" id="pages" name="pages" required>
+                        </div>
+                        
+
+                        <fieldset>
+                            <legend>READ</legend>
+
+                            <ul>
+                                <li>
+                                    <label for="yes">
+                                        <input type="radio" id="yes" name="read" value="yes" required>
+                                        Yes
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label for="no">
+                                        <input type="radio" id="no" name="read" value="no">
+                                        No
+                                    </label>
+                                </li>
+                            </ul>
+
+                        </fieldset>
+
+                        <div class="buttons">
+                            <button>Submit</button>
+                            <button id="close">Close</button>
+                        </div> 
+                        
+                    </div>
+                    
+                </form>
+            </div>
+            
+
         </dialog>
-        <button id="openDialog">New Book</button>
+        <button id="openDialog" style="margin-bottom: 3rem;">New Book</button>
     </div>
 </body>
 </html>
