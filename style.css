@@ -91,6 +91,17 @@ input {
   padding: 0.15rem;
 }
 
+/* Quitar flechas (spinners) en input type="number" */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
 .buttons {
   margin-top: 0.7rem;
   display: flex;
