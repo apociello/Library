@@ -22,6 +22,7 @@ function displayBooks() {
 
     myLibrary.forEach((book) => {
         const row = document.createElement("tr");
+        row.setAttribute('data-id', book.id);
 
         const titulo = document.createElement("td");
         titulo.textContent = book.title;
@@ -48,14 +49,20 @@ function displayBooks() {
         row.appendChild(deletes);
 
         tabla.appendChild(row)
+
+        deleteRow()
     })
+
+    
 }
 
 function addNewBook() {
     const book = myLibrary[myLibrary.length - 1];
 
     const tabla = document.getElementById('cuerpo')
+
     const row = document.createElement("tr");
+    row.setAttribute('data-id', book.id);
 
     const titulo = document.createElement("td");
     titulo.textContent = book.title;
@@ -82,6 +89,26 @@ function addNewBook() {
     row.appendChild(deletes);
 
     tabla.appendChild(row)
+
+    deleteRow()
+}
+
+function deleteRow() {
+    const deleteBtns = document.querySelectorAll('.icon');
+    deleteBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+    const row = btn.parentElement.parentElement;
+    const myid = row.getAttribute('data-id');
+    row.remove()
+
+    myLibrary.forEach((book) => {
+        if (book.id === myid) {
+            const index = myLibrary.indexOf(book);
+            myLibrary.splice(index, 1)
+        }
+    })
+  })
+ }) 
 }
 
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
@@ -114,5 +141,3 @@ closeBtn.addEventListener('click', (e) => {
     form.reset()
     dialog.close()
 })
-
-
