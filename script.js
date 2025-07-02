@@ -41,7 +41,9 @@ function displayBooks() {
         row.appendChild(numero);
 
         const leido = document.createElement("td");
-        leido.textContent = book.read;
+        const button  = document.createElement("button")
+        button.innerHTML = '<svg class="read-button" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <mask id="mask_circle"> <circle cx="50" cy="50" r="50" fill="white"></circle> <circle cx="50" cy="50" r="12" fill="#000000"></circle> </mask> <linearGradient x1="20" y1="60" x2="60" y2="40" id="Gradient" gradientUnits="userSpaceOnUse"> <stop style="stop-color:#0F650E;stop-opacity:1" offset="0"></stop> <stop style="stop-color:#399238;stop-opacity:1" offset="1"></stop> </linearGradient> </defs> <circle cx="50" cy="50" r="48" style="fill:#0F650E"></circle> <circle cx="50" cy="50" r="43" style="fill:url(#Gradient);stroke:#eeeeee;stroke-width:3"></circle> </g></svg>'
+        leido.appendChild(button)
         row.appendChild(leido);
 
         const deletes = document.createElement("td");
