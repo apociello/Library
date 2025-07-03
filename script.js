@@ -20,51 +20,7 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook)
 }
 
-function displayBooks() {
-    const tabla = document.getElementById('cuerpo')
-
-    myLibrary.forEach((book) => {
-        const row = document.createElement("tr");
-        row.setAttribute('data-id', book.id);
-
-        const titulo = document.createElement("td");
-        titulo.textContent = book.title;
-        row.appendChild(titulo);
-
-        const autor = document.createElement("td");
-        autor.textContent = book.author;
-        row.appendChild(autor);
-
-        const hojas = document.createElement("td");
-        hojas.textContent = book.pages;
-        row.appendChild(hojas);
-
-        const numero = document.createElement("td");
-        numero.textContent = book.id;
-        row.appendChild(numero);
-
-        const leido = document.createElement("td");
-        const button = document.createElement("button");
-        button_color(book, button)
-        
-        leido.appendChild(button)
-        row.appendChild(leido);
-
-        const deletes = document.createElement("td");
-        deletes.innerHTML = svgBin;
-        row.appendChild(deletes);
-
-        tabla.appendChild(row)
-
-        deleteRow()
-    })
-
-    
-}
-
-function addNewBook() {
-    const book = myLibrary[myLibrary.length - 1];
-
+function newBook(book) {
     const tabla = document.getElementById('cuerpo')
 
     const row = document.createElement("tr");
@@ -81,13 +37,12 @@ function addNewBook() {
     const hojas = document.createElement("td");
     hojas.textContent = book.pages;
     row.appendChild(hojas);
-
     const numero = document.createElement("td");
     numero.textContent = book.id;
     row.appendChild(numero);
 
     const leido = document.createElement("td");
-    const button  = document.createElement("button");
+    const button = document.createElement("button");
     button_color(book, button)
         
     leido.appendChild(button)
@@ -100,6 +55,17 @@ function addNewBook() {
     tabla.appendChild(row)
 
     deleteRow()
+}
+
+function displayBooks() {
+    myLibrary.forEach((book) => {
+        newBook(book);
+    })
+}
+
+function displayNewBook() {
+    const book = myLibrary[myLibrary.length - 1];
+    newBook(book);
 }
 
 function deleteRow() {
@@ -164,7 +130,7 @@ form.addEventListener('submit', (e) => {
     const data = new FormData(form);
     const obj = Object.fromEntries(data.entries());
     addBookToLibrary(obj.title, obj.author, obj.pages, obj.read);
-    addNewBook();
+    displayNewBook();
     form.reset()
     dialog.close()
 })
