@@ -21,7 +21,7 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function newBook(book) {
-    const tabla = document.getElementById('cuerpo')
+    const tableBody = document.getElementById('cuerpo')
 
     const row = document.createElement("tr");
     row.setAttribute('data-id', book.id);
@@ -52,7 +52,7 @@ function newBook(book) {
     deletes.innerHTML = svgBin;
     row.appendChild(deletes);
 
-    tabla.appendChild(row)
+    tableBody.appendChild(row)
 
     deleteRow()
 }
