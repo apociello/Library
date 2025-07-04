@@ -9,22 +9,27 @@
 </head>
 <body>
     <div class="container">
-        <table>
-            <caption>BOOKS</caption>
 
-            <thead>
-                <th scope="col">TITLE</th>
-                <th scope="col">AUTHOR</th>
-                <th scope="col">PAGES</th>
-                <th scope="col">ID</th>
-                <th scope="col">READ</th>
-            </thead>
+            <p class="title">BOOKS</p>
 
-            <tbody id="cuerpo">
-                
-            </tbody>
+            <div class="table-wrap">
+                <table>
 
-        </table>
+                    <thead>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">AUTHOR</th>
+                        <th scope="col">PAGES</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">READ</th>
+                        <th scope="col" class="bin-col"></th>
+                    </thead>
+
+                    <tbody id="cuerpo">
+                        
+                    </tbody>
+
+                </table>
+            </div>
 
         <dialog id="myDialog">
 
@@ -33,17 +38,17 @@
                 <form action="" method="post" autocomplete="off">
 
                     <div class="form">
-                        <div class="question">
+                        <div class="form-question">
                             <label for="title">TITLE</label>
                             <input type="text" id="title" name="title" required>
                         </div>
                     
-                        <div class="question">
+                        <div class="form-question">
                             <label for="author">AUTHOR</label>
                             <input type="text" id="author" name="author" required>
                         </div>
                         
-                        <div class="question">
+                        <div class="form-question">
                             <label for="pages">PAGES</label>
                             <input type="number" id="pages" name="pages" required>
                         </div>
@@ -51,7 +56,6 @@
 
                         <fieldset>
                             <legend>READ</legend>
-
                             <ul>
                                 <li>
                                     <label for="yes">
@@ -67,10 +71,9 @@
                                     </label>
                                 </li>
                             </ul>
-
                         </fieldset>
 
-                        <div class="buttons">
+                        <div class="dialog-buttons">
                             <button type="submit" class="saveBtn">Save</button>
                             <button id="close">Close</button>
                         </div> 
@@ -79,10 +82,9 @@
                     
                 </form>
             </div>
-            
-
+        
         </dialog>
-        <button id="openDialog" style="margin-bottom: 2rem;">New Book</button>
+        <button class="newBook" id="openDialog">New Book</button>
     </div>
 </body>
 </html>

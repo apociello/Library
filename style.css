@@ -22,27 +22,57 @@ body {
   width: 1000px;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
   flex-direction: column;
   border-radius: 30px;
-  justify-content: space-between;
+}
+
+p.title {
+  color: white;
+  padding: 1rem;
+  font-size: 3rem;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.table-wrap {
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.table-wrap::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.table-wrap::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrap::-webkit-scrollbar-thumb {
+  background: #404040;
 }
 
 table {
   border-collapse: collapse;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: none;
   letter-spacing: 1px;
-  max-width: 90%;
   margin-left: 2rem;
-}
-
-td, th {
-  border: 1px solid rgb(190,190,190);
-  padding: 15px 20px;
 }
 
 th {
   background-color: rgb(235,235,235);
+  position: sticky;
+  top: 0;
+}
+
+th.bin-col {
+  border: none;
+  background-color: black
+}
+
+th, td {
+  border: 1px solid rgb(190,190,190);
+  padding: 15px 20px;
 }
 
 td {
@@ -51,11 +81,11 @@ td {
   text-align: center;
 }
 
-caption {
-  color: white;
-  padding: 1rem;
-  font-size: 3rem;
-  margin-top: 1rem;
+tr > td:last-child {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  padding-left: 2rem;
 }
 
 dialog {
@@ -68,7 +98,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: rgba(0,0,0,0.5)
+  background-color: rgba(0,0,0,0.7)
 }
 
 .form {
@@ -77,7 +107,7 @@ dialog::backdrop {
   gap: 0.5rem;
 }
 
-.question {
+.form-question {
   display: flex;
   flex-direction: column;
 }
@@ -105,14 +135,20 @@ input[type=number] {
   -moz-appearance: textfield; /* Firefox */
 }
 
-.buttons {
+button {
+  padding: 8px;
+}
+
+.dialog-buttons {
   margin-top: 0.7rem;
   display: flex;
   justify-content: space-between;
 }
 
-button {
-  padding: 8px;
+button.newBook {
+  align-self: center;
+  margin-bottom: 2rem; 
+  margin-top: 2rem;
 }
 
 td button {
@@ -127,20 +163,10 @@ td button {
   width: 30px
 }
 
-table {
-  border: none;
-}
-tr > td:last-child {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  padding-left: 2rem;
-}
-
-.icon {
+.bin-icon {
   width: 34px;
 }
 
-.icon:hover {
+.bin-icon:hover {
   cursor: pointer;
 }
