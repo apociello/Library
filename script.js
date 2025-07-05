@@ -112,10 +112,10 @@ function toggle_read(button, book) {
 }
 
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
-addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
+addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'NO');
 addBookToLibrary('It', 'Stephen King', '1138', 'NO')
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
-addBookToLibrary('Artic Dreams', 'Barry Lopez', '448', 'NO');
+addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'NO');
 addBookToLibrary('It', 'Stephen King', '1138', 'NO')
 displayBooks()
 
