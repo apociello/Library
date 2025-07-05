@@ -104,7 +104,7 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 dialog::backdrop {
@@ -114,7 +114,7 @@ dialog::backdrop {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
 
 .form-question {
@@ -124,29 +124,41 @@ dialog::backdrop {
 
 fieldset {
   border: none;
+  font-family:'Times New Roman', Times, serif;
+}
+
+label,
+legend {
+  font-weight: 599;
+  font-size: 1.2rem;
+}
+
+legend {
+  margin-bottom: 0.2rem;
 }
 
 ul {
   list-style: none;
 }
 
-label,
-legend {
-  font-family:'Times New Roman', Times, serif;
-  font-weight: 590;
-  font-size: 1.1rem;
-}
-
 fieldset label {
-  font-family:'Times New Roman', Times, serif;
   font-size: 1rem;
   font-weight: 400;
+  color: #616262;
 }
 
 input {
   font-family:'Times New Roman', Times, serif;
   font-size: 1rem;
-  padding: 0.25rem;
+  border: 1.5px solid #dcdee1;
+  border-radius: 3px;
+  padding: 0.2rem;
+  color: #616262;
+}
+
+input:focus {
+  outline: none; 
+  border-color: #3b82f6;
 }
 
 /* Quitar flechas (spinners) en input type="number" */
@@ -162,17 +174,30 @@ input[type=number] {
 
 button {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 1rem;
-  padding: 8px;
+  padding: 0.6rem 1.5rem;
 }
 
 .dialog-buttons {
   margin-top: 0.7rem;
   display: flex;
   justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.dialog-buttons button,
+button.newBook{
+  background: #374151;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.dialog-buttons button {
+  font-size: 1rem;
 }
 
 button.newBook {
+  font-size: 1.2rem;
   align-self: center;
   margin-bottom: 2rem; 
   margin-top: 2rem;
