@@ -146,12 +146,10 @@ function addFirstBook(library) {
         }
 }
 
-addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
-addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'NO');
+addBookToLibrary('Steve Jobs', 'Walter Isaacson', '744', 'NO')
+addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'YES');
 addBookToLibrary('It', 'Stephen King', '1138', 'NO')
-addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
-addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'NO');
-addBookToLibrary('It', 'Stephen King', '1138', 'NO')
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', '310', 'NO')
 displayBooks()
 
 const dialog = document.getElementById('myDialog');
@@ -180,6 +178,3 @@ closeBtn.addEventListener('click', (e) => {
     form.reset()
     dialog.close()
 })
-
-
-
