@@ -1,1 +1,1 @@
-# Library
+This is a library where you can store and remove books.
