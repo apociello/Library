@@ -222,3 +222,13 @@ td button {
 .bin-icon:hover {
   cursor: pointer;
 }
+
+.hide {
+  visibility: hidden;
+}
+
+.emptyMessage {
+  color: #515458;
+  font-size: 2rem;
+  margin: 5rem;
+}

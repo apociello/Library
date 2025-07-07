@@ -81,7 +81,9 @@ function deleteRow() {
             const index = myLibrary.indexOf(book);
             myLibrary.splice(index, 1)
         }
-    })
+    }) 
+
+    emptyLibrary(myLibrary);
   })
  }) 
 }
@@ -111,6 +113,39 @@ function toggle_read(button, book) {
     }
 }
 
+function emptyLibrary(library) {
+    if (library.length === 0) {
+        const tableWrap = document.querySelector('.table-wrap')
+        tableWrap.classList.add('emptyMessage')
+        tableWrap.textContent = "No books yet. Add your first one!"
+    }
+}
+
+function addFirstBook(library) {
+    if (library.length === 0) {
+        const tableWrap = document.querySelector('.table-wrap')
+        tableWrap.classList.remove('emptyMessage');
+        tableWrap.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">TITLE</th>
+                            <th scope="col">AUTHOR</th>
+                            <th scope="col">PAGES</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">READ</th>
+                            <th scope="col" class="bin-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo">
+                        
+                    </tbody>
+            
+                </table>
+                `;  
+        }
+}
+
 addBookToLibrary('Elon Musk', 'Walter Isaacson', '670', 'YES')
 addBookToLibrary('Arctic Dreams', 'Barry Lopez', '448', 'NO');
 addBookToLibrary('It', 'Stephen King', '1138', 'NO')
@@ -132,6 +167,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
     const data = new FormData(form);
     const obj = Object.fromEntries(data.entries());
+    addFirstBook(myLibrary);
     addBookToLibrary(obj.title, obj.author, obj.pages, obj.read);
     displayNewBook();
     form.reset()
